@@ -1,0 +1,79 @@
+package application;
+
+import java.security.SecureRandom;
+import java.util.concurrent.TimeUnit;
+
+public class Game
+{
+	public static void main ( String[] args )
+	{
+		SecureRandom random = new SecureRandom();
+		Soilder f1 = new Soilder();
+		Ally a1 = new Ally();
+		Enemy e = new Enemy();
+		
+		int goodGuys = 0, badGuys = 0, ally = 0, turn = 0, total = 0, attack = 0;
+
+		ally = a1.generateAlly();
+		goodGuys = f1.generateGoodGuys();
+		badGuys = e.generateBadGuys();
+		goodGuys = ally + goodGuys;
+	
+		System.out.println( "Total baddies: " + badGuys );
+		System.out.println( "Total goodies: " + goodGuys);
+		
+		while ( badGuys > 0 )
+		{
+			total++;
+			turn = random.nextInt( 3 ) + 1;
+			
+			if ( turn == 1 )
+			{
+				attack = f1.fight();
+				badGuys = badGuys - attack;
+				System.out.println( "Total baddies left: " + badGuys );
+				System.out.println( "Total good guys left: " + goodGuys );
+			}
+				
+			else if ( turn == 2 )
+			{
+				attack = a1.fight();
+				badGuys = badGuys - attack;
+				System.out.println ( "Total baddies left: " + badGuys );
+				System.out.println( "Total good guys left: " + goodGuys );
+
+			}
+				
+			else if ( turn == 3 )
+			{
+				attack = e.fight();
+				goodGuys = goodGuys - attack;
+				System.out.println( "Total good guys left: " + goodGuys );
+
+			}
+				
+			else
+			{
+				attack = e.fight();
+				badGuys = badGuys - attack;
+				System.out.println( "Total good guys left: " + goodGuys );
+			}
+			
+			if ( goodGuys <= 0 )
+			{
+				System.out.println( "It took: " + total + " to be defeated by the enemy." );
+				break;
+			}
+			
+		}// end while
+		
+		System.out.println( "It took: " + total + " to beat the enemy." );
+		
+
+	}
+	
+	
+	
+
+
+}

@@ -1,0 +1,85 @@
+package application;
+
+import java.security.SecureRandom;
+
+public class Fighter
+{
+
+	protected int _smallGun = 1;
+	protected int _bigGun = 2;
+	protected String _communicationMessage;
+	int _passport;
+	
+	public int fight ()
+	{
+		SecureRandom random = new SecureRandom();
+		int shoot = random.nextInt( 10 ) +1;
+		
+		if ( shoot == 1 )
+		{
+			System.out.println ( "-1");
+			return _smallGun;
+			
+		}
+		else if( shoot == 2 )
+		{
+			System.out.println ( "Soilder Hit! -2");
+			return (int) (_bigGun -= 2 );
+		}
+		else
+		{
+			System.out.println ( "Miss");
+			return 0;
+		}
+	}
+	
+	public int generate()
+	{
+		SecureRandom random = new SecureRandom();
+
+		int goodGuys = 0;
+		goodGuys = random.nextInt( 10 ) + 1;
+		
+		return goodGuys;
+	}
+
+	
+	protected void support()
+	{
+		
+	}
+	
+	void communicate()
+	{
+		
+	}
+	
+	protected double get_smallGun() {
+		return _smallGun;
+	}
+	
+	protected void set_smallGun(int _smallGun) {
+		this._smallGun = _smallGun;
+	}
+	protected double get_bigGun() {
+		return _bigGun;
+	}
+	protected void set_bigGun(int _bigGun) {
+		this._bigGun = _bigGun;
+	}
+	protected String get_communicationMessage() {
+		return _communicationMessage;
+	}
+	protected void set_communicationMessage(String _communicationMessage) {
+		this._communicationMessage = _communicationMessage;
+	}
+	protected int get_passport() {
+		return _passport;
+	}
+	protected void set_passport(int _passport) {
+		this._passport = _passport;
+	}
+	
+	
+	
+}

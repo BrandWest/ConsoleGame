@@ -1,0 +1,11 @@
+package application;
+
+public class Soilder extends Fighter
+{
+	
+	@Override
+	public int fight()
+	{
+		
+	}
+}

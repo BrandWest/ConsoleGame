@@ -1,0 +1,13 @@
+package application;
+
+public class Student extends Person
+{
+	
+	public int numberCourses = 0;
+	
+	@Override
+	public void move()
+	{
+		System.out.println( "Student Move!" );
+	}
+}

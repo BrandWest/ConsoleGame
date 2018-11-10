@@ -1,0 +1,17 @@
+package application;
+
+public class TestScore 
+{
+	public static void main ( String[] args )
+	{
+		// We need variables for: Student, marks, programs, mean, meadian, mode, standard deviation, 
+		
+		
+		
+		
+		
+	}
+	
+	//findBest(..), findMean(...), find standardDeviation(...), outputResult(...), and SortingScores(...)
+
+}

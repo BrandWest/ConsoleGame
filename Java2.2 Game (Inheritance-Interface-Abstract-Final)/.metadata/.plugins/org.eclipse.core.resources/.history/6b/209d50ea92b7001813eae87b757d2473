@@ -1,0 +1,15 @@
+package application;
+
+public class TestPesron 
+{
+	public static void main ( String[] args)
+	{
+		Person person = new Person( "Jim", "Jim123", 20, "123 Fake Road" );
+		Student student = new Student ( "Brandon", "Brandon123", 30, "100 Fake Road", 5 );
+
+		System.out.println( person.toString() );
+		System.out.println( student.toString() );
+		
+
+	}
+}

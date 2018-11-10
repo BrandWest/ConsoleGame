@@ -1,0 +1,9 @@
+package application;
+
+public class Student 
+{
+	public Student ( String name, double grade )
+	{
+		
+	}
+}

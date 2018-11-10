@@ -1,0 +1,28 @@
+package application;
+
+public class Student 
+{
+	private String _name;
+	private double _grade;
+	
+	public Student ( String name, double grade )
+	{
+		
+	}
+
+	protected String getName() {
+		return _name;
+	}
+
+	protected void setName(String _name) {
+		this._name = _name;
+	}
+
+	protected double getGrade() {
+		return _grade;
+	}
+
+	protected void setGrade(double _grade) {
+		this._grade = _grade;
+	}
+}

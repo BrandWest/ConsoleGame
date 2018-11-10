@@ -1,0 +1,11 @@
+package appliction;
+
+public class Dog extends Animal
+{
+	@Override
+	public void move()
+	{
+		_moveSpeed = 2.0;
+		System.out.println( "I am a fish." );
+	}
+}

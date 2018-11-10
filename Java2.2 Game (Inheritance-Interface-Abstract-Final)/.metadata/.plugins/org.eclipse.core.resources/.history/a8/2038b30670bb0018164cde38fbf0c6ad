@@ -1,0 +1,7 @@
+package application;
+
+public abstract class SpaceObject
+{
+	public abstract void draw();
+	public abstract void announce();
+}

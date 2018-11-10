@@ -1,0 +1,22 @@
+package application;
+
+public class Moon extends SpaceObject
+{
+	protected double _radius;
+	protected double _diameter;
+	protected int _sides;
+	@Override
+	public void draw( ) 
+	{
+		_radius = 5.5;
+		_diameter = 11;
+		_sides = 0;
+	}
+
+	@Override
+	public void announce() 
+	{
+		System.out.println( );
+	}
+ 
+}

@@ -1,0 +1,20 @@
+package appliction;
+
+public class Animal 
+{
+	protected double _moveSpeed;
+	
+	public static void main ( String[] args )
+	{
+		Animal [] animal = new Animal [10];
+		
+		for ( int index = 0; index < animal.length; index++ )
+		{
+			System.out.println( animal [index ] + "moves " + move() );
+		}
+	}
+	protected static double move()
+	{
+		return _moveSpeed = 1.0;
+	}
+}

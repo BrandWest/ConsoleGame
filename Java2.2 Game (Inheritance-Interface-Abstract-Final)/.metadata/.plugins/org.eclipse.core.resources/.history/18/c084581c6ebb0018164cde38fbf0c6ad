@@ -1,0 +1,25 @@
+package application;
+
+public class Point extends SpaceObject
+{
+	protected double _height;
+	protected double _length;
+	protected int _sides;
+	
+	@Override
+	public void draw() 
+	{
+		_height = 4;
+		_length = 3.3;
+		_sides = 3;
+	}
+
+	@Override
+	public void announce() 
+	{
+		System.out.println( "Height = " + _height + "Length = " + _length + "Number of sides: " + _sides );
+
+		
+	}
+
+}

@@ -1,0 +1,29 @@
+package application;
+
+import java.security.SecureRandom;
+
+public class Enemy extends Fighter
+{
+	public int fight ()
+	{
+		SecureRandom random = new SecureRandom();
+		int shoot = random.nextInt( 2 ) +1;
+		if ( shoot == 1 )
+			return (int) (_smallGun -= 1 );
+		else if( shoot == 2 )
+			return (int) (_bigGun -= 2 );
+		else
+			return 0;
+	}
+	
+	public int generateBadGuys ()
+	{
+		SecureRandom random = new SecureRandom();
+
+		int badGuys = 0;
+		badGuys = random.nextInt( 100 ) + 1;
+		
+		return badGuys;
+	}
+	
+}

@@ -1,0 +1,27 @@
+package application;
+
+public class Student extends Person
+{
+	public int _numberCourses = 0;
+	public Student ()
+	{
+		
+	}
+	public Student(String name, String userName, int age, String address, int numberCourses) {
+		super( name,  userName, age, address);
+		_numberCourses = numberCourses;
+	}
+	
+
+	@Override
+	public void move()
+	{
+		System.out.println( "Student Move!" );
+	}
+	
+	@Override
+	public String toString()
+	{
+		return super.toString() + ( "\n" + "Number of courses: " + _numberCourses );
+	}
+}

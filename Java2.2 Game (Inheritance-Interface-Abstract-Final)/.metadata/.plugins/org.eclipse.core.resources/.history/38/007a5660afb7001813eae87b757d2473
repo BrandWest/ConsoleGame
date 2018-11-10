@@ -1,0 +1,39 @@
+package application;
+
+import java.security.SecureRandom;
+
+public class Ally extends Soilder
+{
+	@Override
+	public int fight()
+	{
+		SecureRandom random = new SecureRandom();
+		
+		int shoot = random.nextInt( 5 ) + 1;
+		
+		if ( shoot == 1 )
+		{
+			System.out.println("Small Ally hit - 2" );
+			return _smallGun * 2;
+		}
+		else if( shoot == 2 )
+		{
+			System.out.println("Big Ally hit! -6" );
+			return _bigGun *3;
+		}
+		else
+		{
+			System.out.println( "Ally Miss.");
+			return 0;
+		}
+	}
+	public int generateAlly()
+	{
+		SecureRandom random = new SecureRandom();
+
+		int ally = 0;
+		ally = random.nextInt( 5 ) ;
+		
+		return ally;
+	}
+}

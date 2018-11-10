@@ -1,0 +1,128 @@
+package application;
+
+import java.util.Scanner;
+
+/*
+ * Name: Brandon West
+ * Assignment 1
+ * Program: Bacholers of Information Security
+ * 
+ * This program computes the final scores of students from an input from the user.
+ */
+public class TestScores
+{
+	public static void main ( String[] args )
+	{
+		int studentSize = 0, total = 0, subjects = 0, totalMarks = 0, choice = 1;
+		double score = 0;
+		String courseCode, name, marks;
+		Scanner input = new Scanner(System.in);
+		Scores scores = new Scores();
+		
+		System.out.print( "Please input the number of students: " );
+		studentSize = input.nextInt();
+		System.out.print( "How many marks to be input: ");
+		totalMarks = input.nextInt();
+		
+		String [][] student = new String [ studentSize ] [ totalMarks ] ;
+		Double [] grades = new Double [ totalMarks ];
+		String [] names = new String [ studentSize ];
+		
+		// enter number of students, and input marks (2d Array)
+		for ( int row = 0; row < student.length; row++ )
+		{
+			System.out.print ( "Please enter the students name: " );
+			name = input.next();
+			names [ row ] = name;
+			
+			
+			for (int col = 0; col < totalMarks; col++ )
+			{
+//				if ( col == 0 && row == 0 )
+//				{
+//					System.out.print ( "Please enter program code: ");
+//					courseCode = input.next();
+//					student [ row ] [ col ] = courseCode;
+//				}
+//				else 
+//				{
+					System.out.println ( "Please enter " + names [ row ] + " mark: " );
+					marks = input.next();
+					student [ row ][ col ] = marks;
+//				}
+			}
+		}
+		
+		//		This needs to be figured out, why the grades aren't being done properly. I think col has to always start at 1
+		for ( int row = 0; row < studentSize; row++ )
+		{
+			System.out.println( "Student: " + names [ row ] );
+			System.out.print ( "Grades: " );
+			for (int col = 0; col < student[row].length  ; col++ )
+			{
+				System.out.printf ( "%s   ", student[row][col] );
+				score = Double.parseDouble( student [row] [col ] );
+				grades [ col ] = score;
+				
+			}
+			System.out.println( "" );
+		}
+		
+		// sorts the array
+		scores.sortingScores( grades, names );
+		
+//		for ( int row = 0; row < studentSize; row++ )
+//		{
+//			System.out.println( "Student: " + names [ row ] );
+//			System.out.print ( "Grades: " );
+//			for (int col = 0; col < student.length  ; col++ )
+//			{
+//				System.out.printf ( "%s   ", student[row][col] );
+//			}
+//			System.out.println( "" );
+//		}
+		
+		//		scores.findMean( student );
+		
+		
+	
+//		for ( int row = 0; row < studentSize; row++ )
+//		{
+//			System.out.println( "Student: " + row );
+//			for (int col = 0; col < student[row].length  ; col++ )
+//			{
+//				System.out.println ( "Grades " + student [row][col] );
+//			}
+//		}
+		
+//
+//		// create 2D array for grades and students.
+//		String [][] grades = new String [ subjects ][  ];
+//		
+//		for ( int index = 0; index < grades.length; index++ )
+//		{
+//			System.out.println ( "Please input course code: " );
+//			courseCode = input.next();
+//			grades [ index ] [ 0 ] = courseCode;
+//			
+//			for ( int counter = 1; counter < student.length; counter++ )
+//			{
+//				System.out.println( "Input the students mark for student " + grades.toString() + ":" );
+//				grades [ index ][ counter ] = input.next();
+//			}
+//		}
+//		
+//
+//		scores.findMean ( grades );
+//		System.out.println( "Mean: " + scores.getMean());
+//		
+		
+//		deviation = findDeviation();
+		
+		
+		input.close();
+		
+		
+	}
+
+}

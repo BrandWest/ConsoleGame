@@ -1,0 +1,18 @@
+package appliction;
+
+public class Bird extends Animal
+{
+	public Bird()
+	{
+		_age = 1;
+		_legs = 2;
+		_name = "Bird";
+	}
+	
+	@Override
+	public void move()
+	{
+		_moveSpeed = 2.0;
+		System.out.println( "I am a fish." );
+	}
+}

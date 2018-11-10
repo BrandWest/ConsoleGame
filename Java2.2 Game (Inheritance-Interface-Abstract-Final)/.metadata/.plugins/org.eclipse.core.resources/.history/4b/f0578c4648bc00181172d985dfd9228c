@@ -1,0 +1,92 @@
+package application;
+
+import java.util.Scanner;
+
+/*
+ * Name: Brandon West
+ * Assignment 1
+ * Program: Bacholers of Information Security
+ * 
+ * This program computes the final scores of students from an input from the user.
+ */
+public class TestScores
+{
+	public static void main ( String[] args )
+	{
+		int studentSize = 0, total = 0, subjects = 0, totalMarks = 0, choice = 1;
+		double score = 0, marks = 0;
+		String courseCode = "", name = "";
+		Scanner input = new Scanner(System.in);
+		Scores scores = new Scores();
+		
+		System.out.print( "Please input the number of students: " );
+		studentSize = input.nextInt();
+		System.out.print( "How many marks to be input: ");
+		totalMarks = input.nextInt();
+		
+		String [][] student = new String [ studentSize ] [ totalMarks ] ;
+		Double [] grades = new Double [ totalMarks ];
+		String [] names = new String [ studentSize ];
+	//	Student [] studentArray = new Student [ studentSize ];
+		
+		// enter number of students, and input marks (2d Array)
+		for ( int index = 0; index < student.length; index++ )
+		{
+			System.out.print ( "Please enter the students name: " );
+			name = input.next();
+			names [ index ] = name;
+			System.out.print( "Please enter the program code: " );
+			courseCode = input.next();
+			// input the course code, for a student, and sets the mark.
+			for (int counter = 0; counter < totalMarks; counter++ )
+			{
+				System.out.print ( "Please enter " + names [ index ] + "'s mark: " );
+				marks = input.nextDouble();
+				
+				if ( marks > 100 || marks < 0 )
+				{
+					System.out.print( "Marks can only be between 0 and 100. Try again: ");
+					marks = input.nextDouble();					
+				}
+				else
+				{
+					grades [ counter ] = marks;
+				}
+			}
+		}
+
+		// right now the first students grades are overwritten, I should make a student [] to hold grades
+		// and to hold the name of the student. 
+		// I can do program too for the marks.
+		
+		
+		// sorts the array
+		scores.sortingScores( grades, names );
+		// finds mean
+		for ( int index = 0; index < student.length; index++)
+		{
+			scores.findMean( grades );			
+		}
+	
+		
+		// finds standard deviation
+		for ( int index = 0; index < student.length; index++)
+		{
+			scores.findDeviation( grades );
+		}
+		
+		
+		
+		
+		//inputting into the student array 
+//		student [ index ] [ 0 ] = courseCode;
+//		if ( index == 0 && row == 0 )
+//			index++;
+//		student [ index ][ col ] = Double.toString( marks );
+		
+		input.close();
+		
+		
+	}
+
+}

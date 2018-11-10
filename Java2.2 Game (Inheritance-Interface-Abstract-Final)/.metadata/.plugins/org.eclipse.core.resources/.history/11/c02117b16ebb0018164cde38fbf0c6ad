@@ -1,0 +1,19 @@
+package application;
+
+public class TestSpaceObject 
+{
+	public static void main (String[] args )
+	{
+		SpaceObject [] spaceObj = new SpaceObject [ 2 ];
+		Moon moon = new Moon ();
+		Point point = new Point();
+		spaceObj [ 0 ] = new Moon();
+		spaceObj [ 2 ] = new Point();
+		
+		for ( int index = 0; index < spaceObj.length; index ++ )
+		{
+			System.out.println( spaceObj.announce() );
+		}
+	}
+
+}

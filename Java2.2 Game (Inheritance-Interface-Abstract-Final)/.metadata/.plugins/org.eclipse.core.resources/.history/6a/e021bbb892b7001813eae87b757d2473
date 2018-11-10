@@ -1,0 +1,36 @@
+package application;
+
+public class Person
+{
+	public String name;
+	protected String userName;
+	int age;
+	private String address;
+	
+	public Person() {
+		
+	}
+	public Person(String string, String string2, int i, String string3) 
+	{
+		String name = "";
+		String userName = "";
+		int age = 0;
+		String address = "";
+	}
+
+
+	public void move()
+	{
+		System.out.println( "Move Person!");
+	}
+	
+	@Override
+	public String toString()
+	{
+		return "Name: " + name + "\n" + "UserName: " + userName + "\n" + "Age: " + age + "\n" + 
+				"Address: " + address;
+	}
+	
+	
+	
+}

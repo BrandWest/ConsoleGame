@@ -1,0 +1,34 @@
+package application;
+// extends abstract class spaceobject, but has concrete infor
+public class Moon extends SpaceObject
+{
+	protected double _radius;
+	protected double _diameter;
+	protected int _sides;
+	
+	public Moon ()
+	{
+		
+	}
+	public Moon ( double radius, double diameter, int sides)
+	{
+		_radius = radius;
+		_diameter = diameter;
+		_sides = sides;
+	}
+	
+	@Override
+	public void draw( ) 
+	{
+		_radius = 5.5;
+		_diameter = 11;
+		_sides = 0;
+	}
+
+	@Override
+	public void announce() 
+	{
+		System.out.println( "Radius = " + _radius + "Diameter = " + _diameter + "Number of sides: " + _sides );
+	}
+ 
+}

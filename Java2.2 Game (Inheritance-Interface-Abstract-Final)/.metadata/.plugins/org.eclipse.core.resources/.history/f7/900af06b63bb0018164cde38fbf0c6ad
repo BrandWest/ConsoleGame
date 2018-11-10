@@ -1,0 +1,64 @@
+package appliction;
+
+public class Animal 
+{
+	public double _moveSpeed;
+	protected int _legs;
+	protected int _age;
+	public String _name;
+	
+	public static void main ( String[] args )
+	{
+		Animal[] animal = new Animal [ 10 ];
+		
+		Fish trout = new Fish();
+		Fish salmon = new Fish();
+		Fish largeBass = new Fish();
+		Frog tadpole = new Frog();
+		Bird robin = new Bird();
+		Bird robin2 = new Bird();
+		Dog golden = new Dog();
+		Dog pitbull = new Dog();
+		Dog german = new Dog();
+		Dog rotwiler = new Dog();
+		
+		animal [ 0 ] = trout;
+		animal [ 1 ] = salmon;
+		animal [ 2 ] = tadpole;
+		animal [ 3 ] = robin;
+		animal [ 4 ] = robin2;
+		animal [ 5 ] = golden;
+		animal [ 6 ] = german;
+		animal [ 7 ] = pitbull;
+		animal [ 8 ] = rotwiler;
+		animal [ 9 ] = largeBass;
+				
+		for ( int index = 0; index < animal.length; index++ )
+		{
+			System.out.println ( animal [ index ].toString() );
+		}
+	}
+	public Animal() 
+	{
+		
+	}
+	
+	public Animal( int age, int legs, String name )
+	{
+		_age = 0;
+		_legs = 2;
+		_name = "animal";
+	}
+	
+	public void move()
+	{
+		_moveSpeed = 1.0;
+		System.out.println( "I am an Animal." );
+	}
+	
+	@Override
+	public String toString()
+	{
+		return "Legs: " + _legs + "\n" + "UserName: " + _name + "\n" + "Age: " + _age + "\n";
+		}	
+}

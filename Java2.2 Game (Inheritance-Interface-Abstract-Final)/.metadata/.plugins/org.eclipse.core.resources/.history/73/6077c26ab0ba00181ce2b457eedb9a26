@@ -1,0 +1,26 @@
+package application;
+
+import java.util.Scanner;
+
+public class TestScore 
+{
+	public static void main ( String[] args )
+	{
+		// We need variables for: Student, marks, programs, mean, median, mode, standard deviation, class for scores?
+		int totalMarks = 0, studentSize = 0;
+		double mean = 0, median, mode, standardDeviation ;
+		Scanner input = new Scanner (System.in);
+		
+		
+		
+		// this will take the input of the user, studentSize and input it for the size of the array.
+		String [][] student = new String[ studentSize  ][];
+		
+		
+		
+		
+	}
+	
+	//findBest(..), findMean(...), find standardDeviation(...), outputResult(...), and SortingScores(...)
+
+}

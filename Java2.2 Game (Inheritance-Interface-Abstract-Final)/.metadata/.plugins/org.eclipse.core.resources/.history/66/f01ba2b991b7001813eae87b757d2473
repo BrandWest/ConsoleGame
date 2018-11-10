@@ -1,0 +1,14 @@
+package application;
+
+public class TestPesron 
+{
+	public static void main ( String[] args)
+	{
+		Student student = new Student ( "Brandon", "Brandon123", 30, "100 Fake Road", 5 );
+		
+		
+		
+		
+		System.out.println( student.toString() );
+	}
+}

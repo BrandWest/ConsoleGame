@@ -1,0 +1,13 @@
+package application;
+
+public class Enemy extends Fighter
+{
+	public int fight ()
+	{
+		int killed = 0;
+		
+		killed -= 1;
+		
+		return killed;
+	}
+}

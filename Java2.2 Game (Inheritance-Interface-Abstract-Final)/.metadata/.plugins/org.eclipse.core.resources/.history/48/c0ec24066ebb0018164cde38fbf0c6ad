@@ -1,0 +1,21 @@
+package application;
+
+public class Point extends SpaceObject
+{
+	protected double _height;
+	protected double _length;
+	protected int _sides;
+	
+	@Override
+	public void draw() 
+	{
+		
+	}
+
+	@Override
+	public void announce() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,9 @@
+package appliction;
+
+public class Safari 
+{
+	public static void main ( String[] args )
+	{
+		
+	}
+}

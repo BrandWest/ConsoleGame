@@ -1,0 +1,23 @@
+package application;
+
+import java.security.SecureRandom;
+
+public class Soilder extends Fighter
+{
+	
+	@Override
+	public int fight()
+	{
+		return _passport;
+		
+	}
+	public int generateGoodGuys()
+	{
+		SecureRandom random = new SecureRandom();
+
+		int goodGuys = 0;
+		goodGuys = random.nextInt( 10 ) + 1;
+		
+		return goodGuys;
+	}
+}

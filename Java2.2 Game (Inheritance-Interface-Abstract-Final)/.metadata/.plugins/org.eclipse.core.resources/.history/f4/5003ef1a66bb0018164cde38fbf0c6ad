@@ -1,0 +1,30 @@
+package appliction;
+
+public class Fish extends Animal
+{
+	public Fish()
+	{
+		
+	}
+	
+	public Fish( int age, int legs, String name )
+	{
+		super( age, legs, name );
+		_age = age;
+		_legs = legs;
+		_name = name;
+	}
+	
+	@Override
+	public String move()
+	{
+		_moveSpeed = 2.0;
+		return  "I am a fish.";
+	}
+	
+	@Override
+	public String toString()
+	{
+		return super.toString() + "Movement Speed: " + move() + _moveSpeed;
+	}
+}

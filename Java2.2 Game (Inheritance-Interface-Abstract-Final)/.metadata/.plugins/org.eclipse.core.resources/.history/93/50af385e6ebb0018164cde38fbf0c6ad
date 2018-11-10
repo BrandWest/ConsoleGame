@@ -1,0 +1,12 @@
+package application;
+
+public class TestSpaceObject 
+{
+	public static void main (String[] args )
+	{
+		SpaceObject [] spaceObj = new SpaceObject [ 2 ];
+		
+		spaceObj [ 0 ] = new Moon();
+	}
+
+}

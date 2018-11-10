@@ -1,0 +1,91 @@
+package application;
+
+import java.util.Arrays;
+
+public class Scores
+{
+	private double _mean = 0, _deviation = 0;
+	
+	// pass an array to it
+	public void findMean ( Double[] grades )
+	{
+		double scores = 0;
+		int total = 0;
+
+		for (int index = 0; index < grades.length; index++ )
+		{
+				scores = grades[ index ] + scores;
+				total++;
+
+		}
+		this.setMean ( scores / total);
+		total = 0;
+	
+		System.out.println( "The mean of the grades is: " + getMean() );
+	}
+	
+	public void findDeviation(Double[] grades)
+	{
+		double scores = 0;
+		int total = 0;
+
+		for (int index = 0; index < grades.length; index++ )
+		{
+				scores = grades[ index ] + scores;
+				total++;
+
+		}
+		this.setDeviation( Math.sqrt( Math.pow( scores - _mean , 2) ) / total );
+		total = 0;
+			
+		System.out.println ( "The Standard deviation of the students is: " + getDeviation() );
+	}
+	
+	public void outputResult ()
+	{
+		
+	}
+	
+	public void sortingScores ( Double[] grades, String[] names )
+	{
+		try {
+				Arrays.sort( grades );
+				
+				for ( int row = 0; row < grades.length; row++ ) // going too many spaces and giving me out of bounds.
+				{
+					System.out.println( "Student: " + names [ row ] );
+					System.out.print ( "Grades:" );
+					for ( int col = 0; col < grades.length; col++ )
+					{
+						System.out.printf ( "\t%.1f  ", grades [col] );
+					}
+//						System.out.println ( "" );
+				}
+			} catch (ArrayIndexOutOfBoundsException error )
+			{
+				System.out.println (error );
+			}
+		catch ( NullPointerException error )
+		{
+			System.out.println (error );
+		}
+		
+	}
+
+	public double getMean() {
+		return _mean;
+	}
+
+	public void setMean(double _mean) {
+		this._mean = _mean;
+	}
+
+	public double getDeviation() {
+		return _deviation;
+	}
+
+	public void setDeviation(double _deviation) {
+		this._deviation = _deviation;
+	}
+	
+}

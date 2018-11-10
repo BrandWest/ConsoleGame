@@ -1,0 +1,11 @@
+package appliction;
+
+public class Frog extends Animal
+{
+	public void move()
+	{
+		_moveSpeed = 2.0;
+		System.out.println( "I am a fish." );
+	}
+}
+

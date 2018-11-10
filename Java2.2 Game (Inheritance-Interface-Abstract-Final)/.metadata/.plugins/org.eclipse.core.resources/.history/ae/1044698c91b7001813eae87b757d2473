@@ -1,0 +1,9 @@
+package application;
+
+public class TestPesron 
+{
+	public void main ( String[] args)
+	{
+		System.out.println( Student.toString() );
+	}
+}

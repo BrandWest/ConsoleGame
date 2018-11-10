@@ -1,0 +1,30 @@
+package appliction;
+
+public class Frog extends Animal
+{
+	public Frog ()
+	{
+		
+	}
+	public Frog( int age, int legs, String name )
+	{
+		_age = age;
+		_legs = legs;
+		_name = name;
+	}
+	
+	
+	@Override
+	public void move()
+	{
+		_moveSpeed = 2.0;
+		System.out.println( "I am a fish." );
+	}
+	@Override
+	public String toString()
+	{
+		return "Legs: " + _legs + "\n" + "UserName: " + _name + "\n" + "Age: " + _age + "\n" + 
+				"Movement Speed: " + _moveSpeed;
+	}
+}
+

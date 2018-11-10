@@ -1,0 +1,75 @@
+package application;
+
+import java.security.SecureRandom;
+
+public class Game
+{
+	public static void main ( String[] args )
+	{
+		SecureRandom random = new SecureRandom();
+		Soilder f1 = new Soilder();
+		Ally a1 = new Ally();
+		Enemy e = new Enemy();
+		
+		int goodGuys = 0, badGuys = 0, ally = 0, turn = 0, total = 0;
+//		int badGuys = 0, ally = 0, goodGuys = 0;
+//		
+//		for ( int index = 0; index < badGuys; index++ )
+//		{
+//			e = new Enemy( );
+//		}
+//		
+//		for ( int index = 0; index < goodGuys; index++ )
+//		{
+//			f1 = new Soilder( );
+//		}
+//		
+//		for ( int index = 0; index < ally; index++ )
+//		{
+//			a1 = new Ally( );
+//		}
+		ally = a1.generateAlly();
+		goodGuys = f1.generateGoodGuys();
+		badGuys = e.generateBadGuys();
+		goodGuys = ally + goodGuys;
+		System.out.println( "Total baddies: " + badGuys );
+		
+		while ( badGuys >= 0 || goodGuys >= 0)
+		{
+			total++;
+			turn = random.nextInt( 3 ) + 1;
+			
+			if ( turn == 1 )
+			{
+				badGuys = f1.fight();
+				System.out.println( "Total baddies left: " + badGuys );
+				System.out.println( "Total good guys left: " + goodGuys );
+			}
+				
+			else if ( turn == 2 )
+			{
+				badGuys = a1.fight();
+				System.out.println ( "Total baddies left: " + badGuys );
+			}
+				
+			else if ( turn == 3 )
+			{
+				goodGuys = f1.fight();
+			}
+				
+			else
+			{
+				goodGuys = f1.fight();
+			}
+			
+		}// end while
+		
+		System.out.println( "It took: " + total + "To beat the enemy." );
+
+	}
+	
+	
+	
+
+
+}

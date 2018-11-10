@@ -1,0 +1,22 @@
+package application;
+
+import java.security.SecureRandom;
+
+public class Enemy extends Fighter
+{
+	public int fight ()
+	{
+
+	}
+	
+	public int generateBadGuys ()
+	{
+		SecureRandom random = new SecureRandom();
+
+		int badGuys = 0;
+		badGuys = random.nextInt( 10 ) + 1;
+		
+		return badGuys;
+	}
+	
+}

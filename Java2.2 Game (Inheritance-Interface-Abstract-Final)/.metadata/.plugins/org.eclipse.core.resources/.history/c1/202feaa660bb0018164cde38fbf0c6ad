@@ -1,0 +1,15 @@
+package appliction;
+
+public class Bird extends Animal
+{
+	@Override
+	public Animal()
+	{
+		
+	}
+	public void move()
+	{
+		_moveSpeed = 2.0;
+		System.out.println( "I am a fish." );
+	}
+}

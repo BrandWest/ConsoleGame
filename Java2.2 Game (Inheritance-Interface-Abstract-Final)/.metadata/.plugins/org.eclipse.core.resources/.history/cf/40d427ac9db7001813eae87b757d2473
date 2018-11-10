@@ -1,0 +1,69 @@
+package application;
+
+import java.security.SecureRandom;
+
+public class Fighter
+{
+
+	private double _smallGun;
+	public double _bigGun;
+	protected String _communicationMessage;
+	int _passport;
+	
+	public int fight ()
+	{
+		SecureRandom random = new SecureRandom();
+		int shoot = random.nextInt( 2 ) +1;
+		if ( shoot == 1 )
+			return _smallGun -= 1;
+		killed -= 1;
+		
+		return killed;
+	}
+	//ally
+	public int fightAlly ()
+	{
+		int killed = 0;
+		killed -= 2;
+		return killed;
+	}
+	
+	protected void support()
+	{
+		
+	}
+	
+	void communicate()
+	{
+		
+	}
+	
+	protected double get_smallGun() {
+		return _smallGun;
+	}
+	
+	protected void set_smallGun(double _smallGun) {
+		this._smallGun = _smallGun;
+	}
+	protected double get_bigGun() {
+		return _bigGun;
+	}
+	protected void set_bigGun(double _bigGun) {
+		this._bigGun = _bigGun;
+	}
+	protected String get_communicationMessage() {
+		return _communicationMessage;
+	}
+	protected void set_communicationMessage(String _communicationMessage) {
+		this._communicationMessage = _communicationMessage;
+	}
+	protected int get_passport() {
+		return _passport;
+	}
+	protected void set_passport(int _passport) {
+		this._passport = _passport;
+	}
+	
+	
+	
+}

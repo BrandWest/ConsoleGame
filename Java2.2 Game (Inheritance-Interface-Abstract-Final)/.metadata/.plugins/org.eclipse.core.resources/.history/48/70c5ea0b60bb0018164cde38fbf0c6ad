@@ -1,0 +1,23 @@
+package appliction;
+
+public class Animal 
+{
+	protected double _moveSpeed;
+	
+	public static void main ( String[] args )
+	{
+		Fish fish = new Fish();
+		Frog frog = new Frog();
+		Bird bird = new Bird();
+		Animal [] animal = new Animal [10];
+		animal [ 1 ] = fish;
+		for ( int index = 0; index < animal.length; index++ )
+		{
+			
+		}
+	}
+	protected void move()
+	{
+		_moveSpeed = 1.0;
+	}
+}

@@ -1,0 +1,22 @@
+package application;
+
+public class Person
+{
+	public String name = "Jim";
+	protected String userName = "Jim123";
+	int age = 20;
+	private String address = "123 Fake Road";
+	
+	
+	
+	
+	
+	
+	public void move()
+	{
+		System.out.println( "Move Person!");
+	}
+	
+	
+	
+}

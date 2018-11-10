@@ -1,0 +1,40 @@
+package application;
+
+import java.security.SecureRandom;
+
+public class Soilder extends Fighter
+{
+	
+	@Override
+	public int fight ()
+	{
+		SecureRandom random = new SecureRandom();
+		int shoot = random.nextInt( 5 ) +1;
+		if ( shoot == 1 )
+		{
+			System.out.println ( "Soilder Small Hit! -1\n");
+			return _smallGun;
+			
+		}
+		else if( shoot == 2 )
+		{
+			System.out.println ( "Soilder Small Hit! -2.\n");
+			return (int) (_bigGun -= 2 );
+		}
+		else
+		{
+			System.out.println ( "Soilder Miss. \n");
+			return 0;
+		}
+	}
+	
+	public int generateGoodGuys()
+	{
+		SecureRandom random = new SecureRandom();
+
+		int goodGuys = 0;
+		goodGuys = random.nextInt( 10 ) + 1;
+		
+		return goodGuys;
+	}
+}

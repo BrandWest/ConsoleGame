@@ -1,0 +1,12 @@
+package application;
+
+public class Person
+{
+	public String name;
+	protected String userName;
+	int age = 0;
+	private String address;
+	
+	
+	
+}

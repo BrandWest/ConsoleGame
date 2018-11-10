@@ -1,0 +1,40 @@
+package application;
+// Questions: 
+	// How are we sorting the arrays? By name or by score? And do they have to coincide with the names after being sorted?
+	// Can the scheme for grades be 100-90 A 90-80 B... etc?
+	// 
+import java.util.Scanner;
+
+public class TestScore 
+{
+	public static void main ( String[] args )
+	{
+		// We need variables for: Student, marks, programs, mean, median, mode, standard deviation, class for scores?
+		int totalMarks = 0, studentSize = 0;
+		double mean = 0, median, mode, standardDeviation ;
+		
+		Scanner input = new Scanner (System.in);
+		
+		
+		System.out.println ( "Please specify the number of students: " );
+		studentSize = input.nextInt();
+		// this will take the input of the user, studentSize and input it for the size of the array.
+		String [][] student = new String[ studentSize ][];
+		
+		
+		for (int index = 0; index < student.length; index++ )
+		{
+			System.out.println ( "Please enter the students name: " );
+			name = input.nextLine();
+		}
+		System.out.println ( "Please input the number of marks to be entered: " );
+		totalMarks = input.nextInt();
+		// we will ask for the student name to input into the array 0,0 - 0,StudentSize
+		
+		
+		input.close();
+	}
+	
+	//findBest(..), findMean(...), find standardDeviation(...), outputResult(...), and SortingScores(...)
+
+}

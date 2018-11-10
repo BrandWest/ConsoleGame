@@ -1,0 +1,21 @@
+package application;
+
+import java.security.SecureRandom;
+
+public class Ally extends Soilder
+{
+	@Override
+	public int fight()
+	{
+		
+	}
+	public int generateAlly()
+	{
+		SecureRandom random = new SecureRandom();
+
+		int ally = 0;
+		ally = random.nextInt( 1 );
+		
+		return ally;
+	}
+}

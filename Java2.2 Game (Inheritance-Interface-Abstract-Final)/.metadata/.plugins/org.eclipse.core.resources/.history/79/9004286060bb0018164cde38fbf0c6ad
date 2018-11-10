@@ -1,0 +1,9 @@
+package appliction;
+
+public class Fish extends Animal
+{
+	public double move()
+	{
+		return _moveSpeed = 2.0;
+	}
+}

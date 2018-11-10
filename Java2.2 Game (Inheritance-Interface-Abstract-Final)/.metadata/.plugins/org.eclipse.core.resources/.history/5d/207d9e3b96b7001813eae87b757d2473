@@ -1,0 +1,39 @@
+package application;
+
+public class Person
+{
+	public String _name;
+	protected String _userName;
+	int _age;
+	private String _address;
+	
+	// default constuctor
+	public Person() {
+		
+	}
+	
+	// overloading constructor
+	public Person(String name, String userName, int age, String address) 
+	{
+		_name = name;
+		_userName = userName;
+		_age = age;
+		_address = address;
+	}
+
+
+	public void move()
+	{
+		System.out.println( "Move Person!");
+	}
+	
+	@Override
+	public String toString()
+	{
+		return "Name: " + _name + "\n" + "UserName: " + _userName + "\n" + "Age: " + _age + "\n" + 
+				"Address: " + _address;
+	}
+	
+	
+	
+}

@@ -1,0 +1,124 @@
+package application;
+/*
+ *  Brandon West, Braedon Goodhew, David Sampson
+ *  PROG20025 - Hooda Fahmy
+ *  September 11, 2018
+ */
+
+import java.security.SecureRandom;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class PrefixAverages1 
+{
+	public static void main ( String[] args)
+	{
+		// initalize variables, objects
+		int size = 1; // holds user input of size
+		int algo = 0;
+		Scanner input = new Scanner( System.in ); // scanner to accept user input
+		
+		System.out.println( "Choose which Algorithm you want to use (1 or 2): ");
+		algo = input.nextInt();
+		
+		while ( size != 0 ) // while loop to control the size input of the arrays
+		{	
+			System.out.println ( "Please enter the number to be tested, 0 to exit: " );
+			// try / catch block to verify user input
+			try 
+			{
+				size = input.nextInt();	// size input from user	
+			}
+			catch ( InputMismatchException error ) // error occurs
+			{
+				System.out.println( "Wrong input, use integers only: " + error );
+				input.nextLine(); // clear scanner object
+				System.out.println( "Try again. Please input the number to be tested, 0 to exit: " );
+				size = input.nextInt(); // size input by user
+			}
+			
+			if (size == 0 ) //  if statement to break out of while loop
+			{
+				System.out.println ( "Exiting..." );
+				break; // breaks out so it doesnt run the last bit of code in the methods.
+			}
+			double[] averageArray, averageArray2;
+			if ( algo == 1 )
+				averageArray, averageArray2 = algorithmTest1( size );
+			else if ( algo == 2 )
+				averageArray2 = algorithmTest2();
+			else 
+				System.out.println( "Failed." );input.nextLine();// clears scanner input
+			
+			averageArray = prefixAverages1 ( averageArray, size ); // call prefixAverages1 and pass averageArray and size to it
+			averageArray2 = prefixAverages2 ( averageArray2, size ); // call prefixAverages2 and pass averageArray and size to it
+		} // end of while loop
+		
+		input.close(); // closer scanner
+	} // end main
+	
+	public static double[] prefixAverages1 ( double [] averageArray, int size )
+	{
+		// initalized variables
+	    long endTime = 0, finishTime = 0; // used to calculate the runtime
+	    SecureRandom random = new SecureRandom(); // secure random object to create random numbers
+		double average = 0.0; // holds sum for average calculation
+		int [] randomArray= new int [ size ]; // random array that holds the random numbers generated
+		
+		long startTime = System.nanoTime(); // start time of algorithm
+		
+		for (int index = 0; index < randomArray.length; index++) // for loop to control the random array
+		{
+			randomArray [ index ] = random.nextInt( 100 ) + 1; // random integers input into the array at index 1-100
+			for ( int counter = 0; counter < index; counter++ ) // for loop to controlled by counter
+			{
+				average = average + randomArray[ index ]; // sum of the random array at counter and previous number "average"
+			}
+			averageArray [ index ] = ( average / ( index ) ); //average calculated into average array at index
+		}
+		
+		endTime = System.nanoTime(); // end time of algorithm
+		finishTime = endTime - startTime; // calculated runtime in ms and printed
+		System.out.printf ( "Prefix Averages 1 took: %d ms\n", finishTime = finishTime / 1000000 ); // converts from nanoseconds to milliseconds
+		
+		return averageArray; // return average array
+	} // end of prefixAverages1 method
+
+	public static double [] prefixAverages2 ( double [] averageArray, int size )
+	{
+		// Inializing Arrays, variables, times
+	    long endTime = 0, finishTime = 0; // end time and finish times to track how long program took to run.
+		SecureRandom random = new SecureRandom(); // secure random object
+		int [] randomArray= new int [ size ]; // random array to hold the amount of numbers generated
+		double average2 = 0.0; // average to hold the average of the previous number and current number
+		
+		long startTime = System.nanoTime(); // start time to track the length of time it takes to run algorithm
+		
+		for ( int index = 0; index < randomArray.length ; index++ ) // for loop controlled by array length and index
+		{
+			randomArray [ index ] = random.nextInt( 100 ) + 1; // Random number created and stored in randomArray
+			average2 = average2 + randomArray [ index ]; // sum calculated and stored in average2
+			averageArray [ index ] = average2 / (index + 1 ); // average calculated and stored in averageArray
+		}	
+		
+		endTime = System.nanoTime(); // end time for the program
+		finishTime = endTime - startTime; // calculated runtime in ms and printed
+		System.out.printf ( "Prefix Averages 2 took: %d ms\n", finishTime = finishTime / 1000000 ); // converts from nanoseconds to milliseconds
+		
+		return averageArray;// returns averageArray
+	}// end of prefixAverages2 method
+	
+	public static double [] algorithmTest1 ( int size)
+	{
+		double [] averageArray = new double [ size ]; // average array object
+		return averageArray;
+	}
+	
+	public static double []	algorithmTest2( int size)
+	{
+		double [] averageArray2 = new double [ size ]; // average array 2 object
+		
+		return averageArray2;
+	}
+
+} // end of class

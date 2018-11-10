@@ -1,0 +1,22 @@
+package appliction;
+
+public class Dog extends Animal
+{
+	public Dog ()
+	{
+		
+	}
+	public Dog( int age, int legs, String name )
+	{
+		_age = age;
+		_legs = legs;
+		_name = name;
+	}
+	
+	@Override
+	public void move()
+	{
+		_moveSpeed = 2.0;
+		System.out.println( "I am a fish." );
+	}
+}

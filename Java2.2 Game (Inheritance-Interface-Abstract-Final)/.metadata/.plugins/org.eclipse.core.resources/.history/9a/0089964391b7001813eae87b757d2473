@@ -1,0 +1,25 @@
+package application;
+
+public class Student extends Person
+{
+	public Student(String string, String string2, int i, String string3, int j) {
+		super(string, string2, i, string3);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public int numberCourses = 0;
+	
+	Student student = new Student ( "Brandon", "Brandon123", 30, "100 Fake Road", 5 );
+	
+	@Override
+	public void move()
+	{
+		System.out.println( "Student Move!" );
+	}
+	
+	@Override
+	public String toString()
+	{
+		super.toString() + ( "\n" + "Number of courses: " + numberCourses );
+	}
+}

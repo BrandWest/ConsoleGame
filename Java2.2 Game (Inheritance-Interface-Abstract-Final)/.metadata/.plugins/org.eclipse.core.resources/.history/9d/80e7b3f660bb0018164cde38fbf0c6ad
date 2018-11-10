@@ -1,0 +1,42 @@
+package appliction;
+
+public class Animal 
+{
+	public double _moveSpeed;
+	protected int _legs;
+	protected int _age;
+	public String _name;
+	
+	Fish fish = new Fish();
+	Frog frog = new Frog();
+	Bird bird = new Bird();
+	Dog dog = new Dog();
+	
+	Animal [] animal = new Animal [10];
+	animal [ 0 ] = fish;
+	animal [ 1 ] = fish;
+	animal [ 2 ] = dog;
+	animal [ 3 ] = dog;
+	animal [ 4 ] = dog;
+	animal [ 5 ] = dog;
+	animal [ 6 ] = frog;
+	animal [ 7 ] = bird;
+	animal [ 8 ] = bird;
+	animal [ 9 ] = bird;
+
+	for ( int index = 0; index < animal.length; index++ )
+	{
+		System.out.println( animal[index] );
+	}
+	public Animal()
+	{
+		_age = 0;
+		_legs = 2;
+		_name = "animal";
+	}
+	protected void move()
+	{
+		_moveSpeed = 1.0;
+		System.out.println( "I am an Animal." );
+	}
+}
